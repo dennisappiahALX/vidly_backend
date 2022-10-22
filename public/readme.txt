@@ -1,1 +1,1 @@
-Vidly is an online music platform
+Vidly is an online movie platform
