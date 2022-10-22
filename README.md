@@ -1,1 +1,1 @@
-### Vidly App is an online music platform 
+### Vidly App is an online movie platform 
