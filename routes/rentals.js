@@ -38,18 +38,19 @@ router.post('/', auth, async(req, res) => {
         }});
         
         try {
-            //for double face commits -transactions
             const session = await mongoose.startSession();
             await session.withTransaction(async () => {
-              await rental.save();
-              movie.numberInStock--;
-              movie.save();
-              res.send(result);
+            await rental.save();
+            movie.numberInStock--;
+            movie.save();
+            res.send(rental);
+
             });
       
             session.endSession();
             console.log('success');
-          } catch (error) {
+          } 
+          catch (error) {
             console.log('error111', error.message);
           }
 });
