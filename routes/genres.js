@@ -5,11 +5,10 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/', async (req,res) => {
+router.get('/', async (req,res) => { 
     const genres = await Genre.find().sort('name');
     res.send(genres);
 });
-
 
 router.post('/', auth, async(req, res) => {
     const {error} = validate(req.body);
@@ -20,7 +19,6 @@ router.post('/', auth, async(req, res) => {
 
     res.send(genre);
 });
-
 
 router.get('/:id', async(req, res) => {
     const genre= await Genre.findById(req.params.id)
@@ -51,5 +49,6 @@ router.delete('/:id', [auth, admin], async(req, res) => {
     res.send(genre);
 
 });
+
 
  module.exports = router;
