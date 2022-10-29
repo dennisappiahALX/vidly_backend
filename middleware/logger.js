@@ -14,12 +14,12 @@ const logger = createLogger({
             filename : 'logInfo.log'
         }),
         
-        new transports.MongoDB({
-            db : 'mongodb://localhost/vidly',
-            options: {useNewUrlParser: true, useUnifiedTopology: true},
-            collection : 'logs',
-            level: 'error'
-        })
+        // new transports.MongoDB({
+        //     db : 'mongodb://localhost/vidly',
+        //     options: {useNewUrlParser: true, useUnifiedTopology: true},
+        //     collection : 'logs',
+        //     level: 'error'
+        // })
     ],
 
     exceptionHandlers : [
