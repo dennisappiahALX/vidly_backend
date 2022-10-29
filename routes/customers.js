@@ -1,3 +1,4 @@
+const validateObjectid = require('../middleware/validateObjectId');
 const auth = require('../middleware/auth');
 const {Customer, validate} = require('../models/customer');
 const express = require('express');
@@ -24,7 +25,7 @@ router.post('/', auth, async(req, res) => {
 });
 
 
-router.get('/:id', async(req, res) => {
+router.get('/:id', validateObjectid, async(req, res) => {
     const customer= await Customer.findById(req.params.id)
 
     if (!customer) return res.status(404).send('The customer with the given ID was not found!');
